@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="logo">
+    <text class="logo-text">技能匹配平台</text>
+  </view>
+  <view class="role-select">
+    <button class="role-btn skill-btn" bindtap="goToSkillUpload">
+      <text class="btn-text">我是技能者</text>
+      <text class="btn-desc">上传技能证书，展示个人技能</text>
+    </button>
+    <button class="role-btn employer-btn" bindtap="goToEmployerList">
+      <text class="btn-text">我是雇佣主</text>
+      <text class="btn-desc">浏览技能者列表，寻找合适人才</text>
+    </button>
+  </view>
+</view>
