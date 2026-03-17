@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="list-title">
+    <text class="title-text">技能者列表</text>
+  </view>
+  
+  <view class="skill-list">
+    <view class="skill-item" wx:for="{{skills}}" wx:key="{{item.id}}" bindtap="goToSkillDetail" data-id="{{item.id}}">
+      <view class="item-header">
+        <text class="name">{{item.name}}</text>
+        <text class="time">{{formatTime(item.createTime)}}</text>
+      </view>
+      <view class="item-content">
+        <text class="skill-desc">{{item.skill}}</text>
+      </view>
+      <view class="item-footer">
+        <text class="cert-count">证书: {{item.images.length}}张</text>
+        <text class="contact">{{item.contact}}</text>
+      </view>
+    </view>
+    
+    <view class="empty-tip" wx:if="{{skills.length === 0}}">
+      <text>暂无技能者信息</text>
+    </view>
+  </view>
+</view>
