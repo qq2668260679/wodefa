@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="detail-card">
+    <view class="detail-header">
+      <text class="name">{{skill.name}}</text>
+      <text class="time">{{formatTime(skill.createTime)}}</text>
+    </view>
+    
+    <view class="detail-section">
+      <text class="section-title">技能描述</text>
+      <text class="skill-content">{{skill.skill}}</text>
+    </view>
+    
+    <view class="detail-section">
+      <text class="section-title">技能证书</text>
+      <view class="cert-list">
+        <view class="cert-item" wx:for="{{skill.images}}" wx:key="index" bindtap="previewImage" data-index="{{index}}">
+          <image src="{{item}}" class="cert-image" />
+        </view>
+      </view>
+    </view>
+    
+    <view class="detail-section">
+      <text class="section-title">联系方式</text>
+      <text class="contact">{{skill.contact}}</text>
+    </view>
+  </view>
+</view>
