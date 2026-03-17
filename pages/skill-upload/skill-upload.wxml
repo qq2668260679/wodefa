@@ -1,0 +1,35 @@
+<view class="container">
+  <view class="form">
+    <view class="form-item">
+      <text class="label">姓名</text>
+      <input class="input" placeholder="请输入您的姓名" bindinput="bindNameInput" />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">技能描述</text>
+      <textarea class="textarea" placeholder="请详细描述您的技能" bindinput="bindSkillInput" />
+    </view>
+    
+    <view class="form-item">
+      <text class="label">技能证书</text>
+      <view class="upload-area">
+        <view class="upload-btn" bindtap="chooseImage">
+          <text class="upload-text">点击上传证书</text>
+        </view>
+        <view class="image-list" wx:if="{{images.length > 0}}">
+          <view class="image-item" wx:for="{{images}}" wx:key="index">
+            <image src="{{item}}" class="uploaded-image" />
+            <text class="delete-btn" bindtap="deleteImage" data-index="{{index}}">×</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <view class="form-item">
+      <text class="label">联系方式</text>
+      <input class="input" placeholder="请输入微信或手机号" bindinput="bindContactInput" />
+    </view>
+    
+    <button class="submit-btn" bindtap="submitSkill">提交技能信息</button>
+  </view>
+</view>
